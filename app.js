@@ -9,7 +9,9 @@ const usersRouter = require('./routes/users');
 /**
  * helm install --name mongodb --set mongodbRootPassword=secretpassword,mongodbUsername=my-user,mongodbPassword=my-password,mongodbDatabase=my-database stable/mongodb
  */
-mongoose.connect('mongodb://my-user:my-password@192.168.99.100:30640/my-database', {useNewUrlParser: true});
+mongoose.connect(
+  'mongodb://my-user:my-password@192.168.99.100:30640/my-database', 
+  { useNewUrlParser: true, useFindAndModify: false});
 
 var app = express();
 

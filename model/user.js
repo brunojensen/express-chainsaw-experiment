@@ -9,5 +9,8 @@ module.exports = mongoose.model(
       surname: {
         type: String
       }
+    }).pre('save', function(next) {
+      console.log('pre-save');
+      next();
     })
 );
